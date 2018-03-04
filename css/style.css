@@ -11,7 +11,7 @@ body {
    flex-direction: column;
 }
 
- @font-face { font-family: Marker; src: url('fonts/Marker-Black.ttf'); }
+ @font-face { font-family: Marker; src: url('Marker-Black.ttf'); }
 
 .links {
    display: flex;
