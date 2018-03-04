@@ -1,0 +1,85 @@
+body {
+  
+  background-color: black;
+}
+
+.container {
+   padding-top: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.links {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   padding-top: 10px;
+}
+
+.frame {
+  border-top: 50px solid white;
+  border-bottom: 0px solid white;
+  border-left: 50px solid white;
+  border-right: 50px solid white;
+  height: 500px;
+  width: 500px;
+  display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  padding-top: 10px;
+}
+
+
+a {
+    text-decoration: none;
+  color: blue;
+  font-family: "arial", Arial, Sans-serif;
+}
+
+p.left {
+  font-size: 4em;
+  color: black;
+  font-family: "arial", Arial, Sans-serif;
+}
+
+p.right {
+  font-size: 4em;
+  color: black;
+  font-family: "arial", Arial, Sans-serif;
+}
+
+.bottom-row {
+  width: 500px;
+  height: 200px;
+  display: flex;
+  background-color: white;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+}
