@@ -1,5 +1,5 @@
 body {
-  
+
   background-color: black;
 }
 
@@ -10,6 +10,8 @@ body {
    justify-content: center;
    flex-direction: column;
 }
+
+ @font-face { font-family: Marker; src: url('fonts/Marker-Black.ttf'); }
 
 .links {
    display: flex;
@@ -59,18 +61,13 @@ a {
     text-decoration: none;
   color: blue;
   font-family: "arial", Arial, Sans-serif;
+
 }
 
-p.left {
+p {
   font-size: 4em;
   color: black;
-  font-family: "arial", Arial, Sans-serif;
-}
-
-p.right {
-  font-size: 4em;
-  color: black;
-  font-family: "arial", Arial, Sans-serif;
+  font-family: Marker;
 }
 
 .bottom-row {
