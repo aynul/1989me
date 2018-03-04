@@ -11,7 +11,10 @@ body {
    flex-direction: column;
 }
 
- @font-face { font-family: Marker; src: url('Marker-Black.ttf'); }
+ @font-face {
+   font-family: Marker;
+   src: url("./css/fonts/Marker-Black.ttf");
+ }
 
 .links {
    display: flex;
@@ -59,12 +62,17 @@ body {
 
 a {
     text-decoration: none;
-  color: blue;
-  font-family: "arial", Arial, Sans-serif;
-
+    color: blue;
+    font-family: "arial", Arial, Sans-serif;
 }
 
-p {
+p.left {
+  font-size: 4em;
+  color: black;
+  font-family: Marker;
+}
+
+p.right {
   font-size: 4em;
   color: black;
   font-family: Marker;
