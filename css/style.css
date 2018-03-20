@@ -170,10 +170,10 @@ p.right {
 }
 
 .logo {
-    width: 40px;
-    height: 40px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    width: 25px;
+    height: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .flexbox { display: flex; padding-top: 20px; justify-content: center; flex-direction: column; align-items: center}
