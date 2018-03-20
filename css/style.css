@@ -3,6 +3,7 @@ body {
   background-color: black;
 }
 
+
 .container {
    padding-top: 100px;
    display: flex;
@@ -12,16 +13,42 @@ body {
 }
 
  @font-face {
-   font-family: Marker;
-   src: url("./css/fonts/Marker-Black.ttf");
+   font-family: "Marker";
+   src: url("./fonts/Marker-Black.ttf");
  }
 
-.links {
+
+ input[type=text] {
+     width: 100%;
+     text-align: center;
+     border-radius: 1em;
+     border-width: 0;
+     font-size: 1em;
+     padding: 12px 20px;
+     margin: 8px 0;
+     background-color: 'blue';
+     box-sizing: border-box;
+ }
+
+ input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    border-width: 1;
+    border-color: blue;
+    background-color: blue;
+}
+
+.links, .input_container {
    display: flex;
    align-items: center;
    justify-content: center;
    flex-direction: column;
    padding-top: 10px;
+}
+
+.export {
+  border: 1px solid black;
 }
 
 .frame {
@@ -67,13 +94,13 @@ a {
 }
 
 p.left {
-  font-size: 4em;
+  font-size: 6em;
   color: black;
   font-family: Marker;
 }
 
 p.right {
-  font-size: 4em;
+  font-size: 6em;
   color: black;
   font-family: Marker;
 }
@@ -87,4 +114,30 @@ p.right {
   justify-content: space-between;
   padding-left: 50px;
   padding-right: 50px;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: white;
+  width: 500px;
+  background-color: black;
+  border-radius: 1em;
+  border-width: 1;
+  font-size: 1em;
+  margin: 8px 0;
+  padding: 12px 20px;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
 }

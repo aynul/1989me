@@ -1,12 +1,10 @@
 function previewFile(){
-       var preview = document.querySelector('img'); //selects the query named img
-      var download = document.querySelector('a')
+       var preview = document.querySelector('#img-preview'); //selects the query named img
        var file    = document.querySelector('input[type=file]').files[0]; //sames as here
        var reader  = new FileReader();
 
        reader.onloadend = function () {
            preview.src = reader.result;
-           download.href = reader.result;  
        }
 
        if (file) {
@@ -14,29 +12,27 @@ function previewFile(){
         //reads the data as a URL
        } else {
            preview.src = "";
-           download.href = "";
        }
-  }
-
-  previewFile();
-
-function PrintDiv(div)
-{
-    html2canvas((div), {
-        onrendered: function(canvas) {
-            var myImage = canvas.toDataURL();
-            downloadURI(myImage, "MaSimulation.png");
-      }
-    });
 }
 
-function downloadURI(uri, name) {
-    var link = document.createElement("a");
+function downloadFile(data) {
+  var aTag = document.createElement('a');
+  aTag.download = '1989me';
+  aTag.href = data;
+  aTag.target = '_blank';
+  document.body.appendChild(aTag);
+  aTag.click();
+  document.body.removeChild(aTag);
+  delete aTag;
+}
 
-    link.download = name;
-    link.href = uri;
-    document.body.appendChild(link);
-    link.click();   
-    //after creating link you should delete dynamic link
-    //clearDynamicLink(link); 
+function PrintDiv(){
+  // var download_link = document.querySelector('#btn-export');
+
+  html2canvas(document.querySelector("#export")).then(function(canvas) {
+    console.log('downloading');
+    downloadFile(canvas.toDataURL("image/png"));
+    // var img = canvas.toDataURL("image/png");
+    // download_link.href = img;
+  })
 }

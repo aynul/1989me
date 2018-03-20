@@ -6,10 +6,11 @@
   <title>1989</title>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
 
       <link rel="stylesheet" href="css/style.css">
-
-
 </head>
 
 <body>
@@ -17,37 +18,65 @@
 
 
 <div class="container">
-<input type="file" id="uploadBtn" class="fileUpload" onchange="previewFile()"><br>
-<div class="frame">
 
-  <img src="" height="500" width="500" alt="Image preview...">
 
-</div>
 
-  <div class="bottom-row">
-    <p class="left">A.H.</p>
-    <p class="right">2007</p>
+  <div id="export">
+    <div class="frame">
+      <img id="img-preview" src="./1989me.jpeg" height="500" alt="Image preview...">
+    </div>
+
+    <div class="bottom-row">
+      <p class="left" id="user_initials">A.H.</p>
+      <p class="right" id="year_output">2007</p>
+    </div>
+  </div>
+
+  <div class="input_container">
+    <input type="text" id="live_update" style="text-transform:uppercase" placeholder="Initials" maxlength="3"/>
+    <input type="text" id="live_update_year" style="text-transform:uppercase" placeholder="Enter Class" maxlength="4"/>
+    <div class="upload-btn-wrapper">
+      <button class="btn">CHANGE IMAGE</button>
+      <input type="file" id="uploadBtn" class="fileUpload" onchange="previewFile()"><br>
+    </div>
+  </div>
+
+
+
+
+  <div class="links">
+
+  <!-- <a class="link" id="btn-export" href="" download="1989.png" onclick="PrintDiv()">Download Result</a> -->
+  <a class="link" href="#" onclick="PrintDiv()">Download Result</a>
+  <a class="link" href="" download="1989me">Share To Facebook</a>
+  <a class="link" href="" download="1989me">Tweet </a>
+
   </div>
 
 </div>
 
 
 
-<div class="links">
-
-<a class="link" href="" download="1989me">Download Result</a>
-<a class="link" href="" download="1989me">Share To Facebook</a>
-<a class="link" href="" download="1989me">Tweet </a>
-
-</div>
-
-
-
-    <script  src="js/index.js"></script>
-
-
 
 
 </body>
+<script  src="js/index.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#live_update').on('keyup', function(){
+            var str = $('#live_update').val()
+            var newString = "";
+            for (var i = 0; i < str.length; i++) {
+                newString += str[i].toUpperCase() + ".";
+            }
 
+            $('#user_initials').text(newString);
+        });
+
+        $('#live_update_year').on('keyup', function(){
+
+            $('#year_output').text($('#live_update_year').val());
+        });
+    });
+</script>
 </html>
