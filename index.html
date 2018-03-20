@@ -6,6 +6,16 @@
   <title>1989me</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
+  <meta property="og:url"           content="https://1989me.com/" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="1989Me: 1989esque Album Cover Generator" />
+  <meta property="og:image"         content="https://1989me.com/preview.png"/>
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1989esque album cover generator" />
+  <meta name="twitter:description" content="Modify T.Swift's 1989 album with your own image, initials and significant year." />
+  <meta name="twitter:image" content="https://1989me.com/preview.png" />
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
@@ -14,45 +24,56 @@
 </head>
 
 <body>
-
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1948217102065012";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
 
 <div class="flexbox">
 
 
 
-  <div id="export">
-    <div class="frame">
-      <img id="img-preview" src="./1989me.jpeg" height="500" alt="Image preview...">
-    </div>
+  <div class="column">
 
-    <div class="bottom-row">
-      <p class="left" id="user_initials">A.H.</p>
-      <p class="right" id="year_output">2007</p>
-    </div>
-  </div>
+      <div class="input_container stretch edit">
+        <input type="text" id="live_update" style="text-transform:uppercase" placeholder="AH" maxlength="3"/>
 
-  <div class="input_container stretch edit">
-    <input type="text" id="live_update" style="text-transform:uppercase" placeholder="AH" maxlength="3"/>
+        <input type="text" id="live_update_year" style="text-transform:uppercase" placeholder="2007" maxlength="4"/>
 
-    <input type="text" id="live_update_year" style="text-transform:uppercase" placeholder="2007" maxlength="4"/>
+          <div class="upload-btn-wrapper edit">
+            <button class="btn">CHANGE IMAGE</button>
+            <input type="file" id="uploadBtn" class="fileUpload" onchange="previewFile()"><br>
+          </div>
+      </div>
 
   </div>
+  <div class="column">
 
-  <div class="upload-btn-wrapper edit">
-    <button class="btn">CHANGE IMAGE</button>
-    <input type="file" id="uploadBtn" class="fileUpload" onchange="previewFile()"><br>
+
+      <div id="export">
+        <div id="image-background"></div>
+        <div class="frame">
+          <img id="img-preview" src="./1989me.jpeg" height="500" alt="Image preview...">
+          <div class="bottom-row">
+            <p class="left" id="user_initials">A.H.</p>
+            <p class="right" id="year_output">2007</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="links edit">
+      <!-- <a class="link" id="btn-export" href="" download="1989.png" onclick="PrintDiv()">Download Result</a> -->
+        <a class="download link" href="#" onclick="PrintDiv()">DOWNLOAD RESULT</a>
+
+      </div>
   </div>
 
 
-
-
-  <div class="links edit">
-
-  <!-- <a class="link" id="btn-export" href="" download="1989.png" onclick="PrintDiv()">Download Result</a> -->
-  <a class="download link" href="#" onclick="PrintDiv()">DOWNLOAD RESULT</a>
-
-  </div>
 
   <img src="./Alum-Eye-Square.png" class="logo"/>
 
@@ -72,8 +93,10 @@
             $('#user_initials').text(newString);
             $(".link").show()
         });
-        
-        $(".link").hide()
+
+        $(".edit").show()
+
+
 
         $('#edit-button').on('click', function(){
           $('.edit').toggle()
