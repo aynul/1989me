@@ -33,9 +33,9 @@
   </div>
 
   <div class="input_container stretch">
-    <input type="text" id="live_update" style="text-transform:uppercase" placeholder="Initials" maxlength="3"/>
+    <input type="text" id="live_update" style="text-transform:uppercase" placeholder="AH" maxlength="3"/>
 
-    <input type="text" id="live_update_year" style="text-transform:uppercase" placeholder="Enter Class" maxlength="4"/>
+    <input type="text" id="live_update_year" style="text-transform:uppercase" placeholder="2007" maxlength="4"/>
 
   </div>
 
@@ -50,7 +50,7 @@
   <div class="links">
 
   <!-- <a class="link" id="btn-export" href="" download="1989.png" onclick="PrintDiv()">Download Result</a> -->
-  <a class="download link" href="#" onclick="PrintDiv()">Download Result</a>
+  <a class="download link" href="#" onclick="PrintDiv()">DOWNLOAD RESULT</a>
 
   </div>
 
@@ -72,6 +72,7 @@
             }
 
             $('#user_initials').text(newString);
+            $(".link").show()
         });
 
         $(".link").hide()
@@ -79,6 +80,7 @@
         $('#live_update_year').on('keyup', function(){
 
             $('#year_output').text($('#live_update_year').val());
+            $(".link").show()
         });
     });
 </script>

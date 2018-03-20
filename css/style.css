@@ -20,6 +20,7 @@ body {
 
  input[type=text] {
      width: 50%;
+     height: auto;
      text-align: center;
      display: inline;
      border-radius: 1em;
@@ -27,7 +28,6 @@ body {
      font-size: 2em;
      padding: 12px 20px;
      margin: 8px 0;
-     background-color: 'blue';
      box-sizing: border-box;
  }
 
@@ -144,9 +144,9 @@ p.right {
 
 .download {
   text-align: center;
-  border: 2px dashed gray;
-  color: white;
-  width: 500px;
+  border: 0px solid gray;
+  color: black;
+  width: 50%;
   height: auto;
   background-color: orange;
   border-radius: 1em;
