@@ -31,7 +31,11 @@ function PrintDiv(){
   // var download_link = document.querySelector('#btn-export');
 
   html2canvas(document.querySelector("#export")).then(function(canvas) {
-    downloadFile(canvas.toDataURL("image/png"));
+    var d = canvas.toDataURL("image/png")
+
+    var w=window.open('about:blank','image from canvas');
+    w.document.write("<img src='"+d+"' alt='from canvas'/>")
+    w.document.title = "Export";
     // var img = canvas.toDataURL("image/png");
     // download_link.href = img;
   })

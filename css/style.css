@@ -52,17 +52,16 @@ button:focus {
    padding-top: 10px;
 }
 
-.export {
-  border: 1px solid black;
-  background-image: url("../cross_scratches.png");
+#export {
+  border: 1px solid grey;
 }
 
 .frame {
 
-  border-top: 50px solid white;
-  border-bottom: 0px solid white;
-  border-left: 50px solid white;
-  border-right: 50px solid white;
+  border-top: 50px solid #F6F6F6;
+  border-bottom: 0px solid #F6F6F6;
+  border-left: 50px solid #F6F6F6;
+  border-right: 50px solid #F6F6F6;
   height: 500px;
   width: 500px;
   display: flex;
@@ -104,11 +103,13 @@ p.left {
   font-size: 6em;
   color: black;
   font-family: Marker;
+  opacity: 0.9;
 }
 
 p.right {
   font-size: 6em;
   color: black;
+  opacity: 0.9;
   font-family: Marker;
 }
 
@@ -116,7 +117,7 @@ p.right {
   width: 500px;
   height: 200px;
   display: flex;
-  background-color: white;
+  background-color: #F6F6F6;
   align-items: center;
   top: -1;
   box-shadow: 0 0 0 0px white;

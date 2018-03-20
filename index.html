@@ -32,14 +32,14 @@
     </div>
   </div>
 
-  <div class="input_container stretch">
+  <div class="input_container stretch edit">
     <input type="text" id="live_update" style="text-transform:uppercase" placeholder="AH" maxlength="3"/>
 
     <input type="text" id="live_update_year" style="text-transform:uppercase" placeholder="2007" maxlength="4"/>
 
   </div>
 
-  <div class="upload-btn-wrapper">
+  <div class="upload-btn-wrapper edit">
     <button class="btn">CHANGE IMAGE</button>
     <input type="file" id="uploadBtn" class="fileUpload" onchange="previewFile()"><br>
   </div>
@@ -47,7 +47,7 @@
 
 
 
-  <div class="links">
+  <div class="links edit">
 
   <!-- <a class="link" id="btn-export" href="" download="1989.png" onclick="PrintDiv()">Download Result</a> -->
   <a class="download link" href="#" onclick="PrintDiv()">DOWNLOAD RESULT</a>
@@ -72,11 +72,14 @@
             $('#user_initials').text(newString);
             $(".link").show()
         });
-
+        
         $(".link").hide()
 
-        $('#live_update_year').on('keyup', function(){
+        $('#edit-button').on('click', function(){
+          $('.edit').toggle()
+        })
 
+        $('#live_update_year').on('keyup', function(){
             $('#year_output').text($('#live_update_year').val());
             $(".link").show()
         });
