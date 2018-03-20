@@ -5,6 +5,7 @@ function previewFile(){
 
        reader.onloadend = function () {
            preview.src = reader.result;
+           $(".link").show()
        }
 
        if (file) {
@@ -30,7 +31,6 @@ function PrintDiv(){
   // var download_link = document.querySelector('#btn-export');
 
   html2canvas(document.querySelector("#export")).then(function(canvas) {
-    console.log('downloading');
     downloadFile(canvas.toDataURL("image/png"));
     // var img = canvas.toDataURL("image/png");
     // download_link.href = img;

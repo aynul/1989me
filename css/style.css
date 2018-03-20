@@ -5,7 +5,7 @@ body {
 
 
 .container {
-   padding-top: 100px;
+   padding-top: 20px;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -19,11 +19,12 @@ body {
 
 
  input[type=text] {
-     width: 100%;
+     width: 50%;
      text-align: center;
+     display: inline;
      border-radius: 1em;
      border-width: 0;
-     font-size: 1em;
+     font-size: 2em;
      padding: 12px 20px;
      margin: 8px 0;
      background-color: 'blue';
@@ -36,11 +37,13 @@ textarea:focus,
 button:focus {
     border-width: 1;
     border-color: blue;
-    background-color: blue;
+    border-radius: 1em;
+    outline: none;
 }
 
 .links, .input_container {
    display: flex;
+   flex: 1;
    align-items: center;
    justify-content: center;
    flex-direction: column;
@@ -111,6 +114,8 @@ p.right {
   display: flex;
   background-color: white;
   align-items: center;
+  top: -1;
+  box-shadow: 0 0 0 0px white;
   justify-content: space-between;
   padding-left: 50px;
   padding-right: 50px;
@@ -123,15 +128,33 @@ p.right {
 }
 
 .btn {
-  border: 2px solid gray;
+  text-align: center;
+  border: 2px dashed gray;
   color: white;
   width: 500px;
+  height: auto;
   background-color: black;
   border-radius: 1em;
   border-width: 1;
-  font-size: 1em;
-  margin: 8px 0;
+  border-radius: 1em;
+  font-size: 2em;
   padding: 12px 20px;
+  margin: 8px 0;
+}
+
+.download {
+  text-align: center;
+  border: 2px dashed gray;
+  color: white;
+  width: 500px;
+  height: auto;
+  background-color: orange;
+  border-radius: 1em;
+  border-width: 1;
+  border-radius: 1em;
+  font-size: 2em;
+  padding: 12px 20px;
+  margin: 8px 0;
 }
 
 .upload-btn-wrapper input[type=file] {
@@ -141,3 +164,9 @@ p.right {
   top: 0;
   opacity: 0;
 }
+
+.flexbox { display: flex; padding-top: 20px; justify-content: center; flex-direction: column; align-items: center}
+    .flexbox .stretch { flex: 1; }
+    .flexbox .normal { flex: 0; margin: 0 0 0 1rem; }
+    .flexbox div input { padding: .5em 1em; width: 100%; }
+    .flexbox div button { padding: .5em 1em; white-space: nowrap; }

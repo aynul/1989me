@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>1989</title>
-
+  <title>1989me</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
@@ -17,7 +17,7 @@
 
 
 
-<div class="container">
+<div class="flexbox">
 
 
 
@@ -32,13 +32,16 @@
     </div>
   </div>
 
-  <div class="input_container">
+  <div class="input_container stretch">
     <input type="text" id="live_update" style="text-transform:uppercase" placeholder="Initials" maxlength="3"/>
+
     <input type="text" id="live_update_year" style="text-transform:uppercase" placeholder="Enter Class" maxlength="4"/>
-    <div class="upload-btn-wrapper">
-      <button class="btn">CHANGE IMAGE</button>
-      <input type="file" id="uploadBtn" class="fileUpload" onchange="previewFile()"><br>
-    </div>
+
+  </div>
+
+  <div class="upload-btn-wrapper">
+    <button class="btn">CHANGE IMAGE</button>
+    <input type="file" id="uploadBtn" class="fileUpload" onchange="previewFile()"><br>
   </div>
 
 
@@ -47,9 +50,7 @@
   <div class="links">
 
   <!-- <a class="link" id="btn-export" href="" download="1989.png" onclick="PrintDiv()">Download Result</a> -->
-  <a class="link" href="#" onclick="PrintDiv()">Download Result</a>
-  <a class="link" href="" download="1989me">Share To Facebook</a>
-  <a class="link" href="" download="1989me">Tweet </a>
+  <a class="download link" href="#" onclick="PrintDiv()">Download Result</a>
 
   </div>
 
@@ -73,10 +74,24 @@
             $('#user_initials').text(newString);
         });
 
+        $(".link").hide()
+
         $('#live_update_year').on('keyup', function(){
 
             $('#year_output').text($('#live_update_year').val());
         });
     });
 </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115780535-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115780535-2');
+</script>
+
+
 </html>
