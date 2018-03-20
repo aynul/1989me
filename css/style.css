@@ -23,6 +23,7 @@ body {
      height: auto;
      text-align: center;
      display: inline;
+     background-color: grey;
      border-radius: 1em;
      border-width: 0;
      font-size: 2em;
@@ -35,8 +36,9 @@ body {
 select:focus,
 textarea:focus,
 button:focus {
-    border-width: 1;
-    border-color: blue;
+    background-color: lightgrey;
+    border-width: 2px;
+    border-color: white;
     border-radius: 1em;
     outline: none;
 }
@@ -52,9 +54,11 @@ button:focus {
 
 .export {
   border: 1px solid black;
+  background-image: url("../cross_scratches.png");
 }
 
 .frame {
+
   border-top: 50px solid white;
   border-bottom: 0px solid white;
   border-left: 50px solid white;
@@ -163,6 +167,13 @@ p.right {
   left: 0;
   top: 0;
   opacity: 0;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .flexbox { display: flex; padding-top: 20px; justify-content: center; flex-direction: column; align-items: center}
