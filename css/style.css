@@ -48,7 +48,13 @@ button:focus {
 
 #export {
   border: 0px solid grey;
-  position: relative;
+  display: block;
+}
+
+.center-block {
+   margin-left:auto;
+   margin-right:auto;
+   display:block;
 }
 
 
@@ -58,7 +64,7 @@ button:focus {
    top: 0px;
    width: 100%;
    height: 100%;
-   opacity: 0.90;
+   opacity: 1;
    z-index: 1;
    background-color: green;
    color: #FFFFFF;
@@ -68,14 +74,15 @@ button:focus {
 .frame {
   z-index: 2;
   background-color: #F6F6F6;
-  opacity: 0.90;
-  filter: opacity(0.90);
-  padding: 50px 50px 50px 50px;
-  width: 600px;
-  display: flex;
-  flex-direction: column;
-   align-items: center;
-   justify-content: center;
+  opacity: 1;
+  filter: sepia(0.10);
+  padding: 25px 50px 50px 25px;
+  width: 350px;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
 }
 
 .fileUpload {
@@ -109,7 +116,7 @@ a {
 }
 
 p {
-  font-size: 6em;
+  font-size: 4em;
   color: black;
   font-family: Marker;
   opacity: 0.9;
@@ -121,14 +128,14 @@ p {
 
 .bottom-row {
   z-index: 1000;
-  background-color: green;
-
   padding-top: 50px;
-  height: 100px;
+  height: 80px;
+  padding-left: 20px;
   width: 100%;
   display: flex;
   background-color: transparent;
   align-items: center;
+  flex-direction: row;
   box-shadow: 0 0 0 0px white;
   justify-content: space-between;
 }

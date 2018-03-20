@@ -27,44 +27,38 @@
 
 <body>
 
-<div class="container-fluid" style="padding-top: 100px;">
+<div class="container" style="padding-top: 100px;">
 
   <div class="row">
 
-  <div class="col-md">
+  <div class="col-sm-12 col-md-6">
 
       <div class="input_container stretch edit">
-        <input type="text" id="live_update" style="text-transform:uppercase" placeholder="AH" maxlength="3"/>
+        <input type="text" id="live_update" style="form-field text-transform:uppercase" placeholder="AH" maxlength="3"/>
 
-        <input type="text" id="live_update_year" style="text-transform:uppercase" placeholder="2007" maxlength="4"/>
+        <input type="text" id="live_update_year" style="form-field text-transform:uppercase" placeholder="2007" maxlength="4"/>
 
           <div class="upload-btn-wrapper edit">
             <button class="btn">CHANGE IMAGE</button>
             <input type="file" id="uploadBtn" class="fileUpload" onchange="previewFile()"><br>
           </div>
+
+          <a class="btn download link" href="#" onclick="PrintDiv()">DOWNLOAD</a>
+
       </div>
 
   </div>
-  <div class="col-md-6">
-
-
+  <div class="col-sm-12 col-md-6">
       <div id="export">
-        <div id="image-background"></div>
+      
         <div class="frame">
-          <img id="img-preview" src="./1989me.jpeg" height="500" alt="Image preview...">
+          <img id="img-preview" src="./1989me.jpeg" height="300" alt="Image preview...">
           <div class="bottom-row">
             <p class="left" id="user_initials">A.H.</p>
             <p class="right" id="year_output">2007</p>
           </div>
         </div>
       </div>
-
-
-      <div class="links edit">
-      <!-- <a class="link" id="btn-export" href="" download="1989.png" onclick="PrintDiv()">Download Result</a> -->
-        <a class="download link" href="#" onclick="PrintDiv()">DOWNLOAD RESULT</a>
-
-      </div>
   </div>
 </div>
 
@@ -72,6 +66,7 @@
 
 
 </div>
+
 <img src="./Alum-Eye-Square.png" class="logo"/>
 </body>
 <script  src="js/index.js"></script>
