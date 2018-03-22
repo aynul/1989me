@@ -31,16 +31,13 @@ function downloadFile(data) {
 function onChange(){
   html2canvas(document.querySelector("#export")).then(function(canvas) {
     var d = canvas.toDataURL("image/png");
-    $('#output').empty().append("<img width='300px' alt='export' src='"+d+"' alt='from canvas'/>");
+    $('#output').empty().append("<img width='300px' id='download' alt='export' src='"+d+"' alt='from canvas'/>");
   });
 }
 
 function PrintDiv(){
   // var download_link = document.querySelector('#btn-export');
-
-    html2canvas(document.querySelector("#export")).then(function(canvas) {
-       var d = canvas.toDataURL("image/png");
-      // var img = canvas.toDataURL("image/png");
-       downloadFile(d)
-    })
+  var d = document.querySelector("#download")
+  // var img = canvas.toDataURL("image/png");
+  downloadFile(d.url)
 }

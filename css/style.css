@@ -132,11 +132,23 @@ a {
 }
 
 p {
-  font-size: 3em;
-  color: black;
   font-family: Marker;
   opacity: 0.9;
 }
+
+
+@media (min-width: 300px) {
+  .mobile-font {
+      font-size: 3rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .mobile-font {
+      font-size: 4.5rem;
+  }
+}
+
 
 
 .bottom-row {
