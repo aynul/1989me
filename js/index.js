@@ -29,9 +29,9 @@ function downloadFile(data) {
 }
 
 function onChange(){
-  html2canvas(document.querySelector("#export")).then(function(canvas) {
+  html2canvas(document.querySelector("#export"), {async: false}).then(function(canvas) {
     var d = canvas.toDataURL("image/png");
-    $('#output').empty().append("<img width='300px' id='download' alt='export' src='"+d+"' alt='from canvas'/>");
+    $('#output').html("<img width='300px' id='download' alt='export' src='"+d+"' alt='from canvas'/>");
   });
 }
 
