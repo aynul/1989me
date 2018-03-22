@@ -2,21 +2,29 @@
 <html lang="en" >
 
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
   <title>1989me</title>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-
-  <meta property="og:url"           content="https://1989me.com/" />
-  <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="1989Me: 1989esque Album Cover Generator" />
-  <meta property="og:description"   content="Create your own personalized, T.Swift 1989 inspired profile picture." />
-
-  <meta property="og:image"         content="https://1989me.com/preview.png"/>
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1989esque album cover generator" />
-  <meta name="twitter:description" content="Create your own personalized, T.Swift 1989 inspired profile picture." />
-  <meta name="twitter:image" content="https://1989me.com/preview.png" />
+  <link rel="canonical" href="https://1989me.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="1989, album cover generator" >
+  <meta name="description" content="Personalize T.Swift's iconic Poloroid style album cover. ">
+  <!--FACEBOOK-->
+  <meta property="og:title" content="'1989' style " >
+  <meta property="og:site_name" content="1989Me">
+  <meta property="og:url" content="https://1989me.com" >
+  <meta property="og:description" content="Personalize T.Swift's iconic Poloroid style album cover. " >
+  <meta property="og:image" content="https://1989me.com/share.png" >
+  <meta property="fb:app_id" content="" >
+  <meta property="og:type" content="website" >
+  <meta property="og:locale" content="en-US" >
+  <!--TWITTER-->
+  <meta property="twitter:card" content="summary" >
+  <meta property="twitter:title" content="1989Me" >
+  <meta property="twitter:description" content="Personalize T.Swift's iconic Poloroid-style album cover. " >
+  <meta property="twitter:creator" content="" >
+  <meta property="twitter:url" content="https://1989me.com" >
+  <meta property="twitter:image" content="https://1989me.com/share.png" >
+  <meta property="twitter:image:alt" content="" >
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
@@ -27,53 +35,81 @@
 
 <body>
 
-<div class="container" style="padding-top: 100px;">
+<div class="container" style="padding-top: 50px;">
 
   <div class="row">
 
-  <div class="col-sm-12 col-md-6">
+<div class="col-xs-12 col-md-6">
 
-      <div class="input_container stretch edit">
-        <input type="text" id="live_update" style="form-field text-transform:uppercase" placeholder="AH" maxlength="3"/>
 
-        <input type="text" id="live_update_year" style="form-field text-transform:uppercase" placeholder="2007" maxlength="4"/>
+  <div class="input_container stretch edit" style="padding-top: 100px;">
+    <input type="text" id="live_update" style="text-transform:uppercase" placeholder="AH" maxlength="3"/>
 
-          <div class="upload-btn-wrapper edit">
-            <button class="btn">CHANGE IMAGE</button>
-            <input type="file" id="uploadBtn" class="fileUpload" onchange="previewFile()"><br>
-          </div>
+    <input type="text" id="live_update_year" style="text-transform:uppercase" placeholder="2007" maxlength="4"/>
 
-          <a class="btn download link" href="#" onclick="PrintDiv()">DOWNLOAD</a>
+      <div class="upload-btn-wrapper edit">
+        <button class="btn">CHANGE IMAGE</button>
+        <input type="file" id="uploadBtn" class="fileUpload" onchange="previewFile()"><br>
 
       </div>
+      <a class="btn download link" href="#" onclick="PrintDiv()">DOWNLOAD</a>
 
   </div>
-  <div class="col-sm-12 col-md-6">
-      <div id="export">
+</div>
+  <div class="col-xs-12 col-md-6">
+    <!-- Tab panes -->
 
-        <div class="frame">
-          <img id="img-preview" src="./1989me.jpeg" height="300" alt="Image preview...">
-          <div class="bottom-row">
-            <p class="left" id="user_initials">A.H.</p>
-            <p class="right" id="year_output">2007</p>
+    <nav>
+      <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Live Preview</a>
+        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Export File</a>
+      </div>
+    </nav>
+
+    <div class="tab-content container" id="nav-tabContent">
+
+      <div class="tab-pane fade show active container" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+
+        <div id="export">
+          <div class="frame">
+            <img id="img-preview" src="./1989me.jpeg" width='100%' alt="Image preview...">
+            <div class="bottom-row">
+              <p class="left" id="user_initials">A.H.</p>
+              <p class="right" id="year_output">2007</p>
+            </div>
           </div>
         </div>
+
       </div>
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <div id="output">
+        </div>
+    </div>
+
+
   </div>
-</div>
-
-
-
+    </div>
 
 </div>
-<a class="logo-wrapper" href="https://www.alumlabs.com?utm_source=1989me">
-  <img src="./Alum-Eye-Square.png" class="logo"/>
-</a>
+
+
+</div>
+
 
 </body>
 <script  src="js/index.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
+        onChange();
+        $('#myTab a').on('click', function (e) {
+            e.preventDefault();
+
+            onChange();
+
+            $(this).tab('show');
+        })
+
         $('#live_update').on('keyup', function(){
             var str = $('#live_update').val()
             var newString = "";
@@ -82,23 +118,18 @@
             }
 
             $('#user_initials').text(newString);
-            $(".link").show()
+            onChange();
+
         });
-
-        $(".edit").show()
-
-
-
-        $('#edit-button').on('click', function(){
-          $('.edit').toggle()
-        })
 
         $('#live_update_year').on('keyup', function(){
             $('#year_output').text($('#live_update_year').val());
-            $(".link").show()
+            onChange();
         });
     });
 </script>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115780535-2"></script>
