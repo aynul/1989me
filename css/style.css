@@ -1,6 +1,7 @@
 body {
 
-  background-color: black;
+  background-color: #FAFAF9;
+  padding-top: 100px;
 }
 
 
@@ -20,7 +21,7 @@ body {
      border-width: 0;
      font-size: 2em;
      padding: 12px 20px;
-     margin: 8px 0;
+     margin: 4px 0;
      box-sizing: border-box;
  }
 
@@ -148,7 +149,6 @@ p {
       font-size: 4.5rem;
   }
 }
-
 
 
 .bottom-row {
