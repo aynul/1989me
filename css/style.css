@@ -1,7 +1,6 @@
 body {
-
-  background-color: #FAFAF9;
-  padding-top: 100px;
+  background-color: #000000;
+  padding-top: 25px;
 }
 
 
@@ -11,13 +10,13 @@ body {
  }
 
 
+
  input[type=text] {
      width: 50%;
      height: auto;
      text-align: center;
      display: inline;
      background-color: grey;
-     border-radius: 1em;
      border-width: 0;
      font-size: 2em;
      padding: 12px 20px;
@@ -25,10 +24,9 @@ body {
      box-sizing: border-box;
  }
 
- input:focus,
 select:focus,
 textarea:focus,
-button:focus {
+{
     background-color: lightgrey;
     border-width: 2px;
     border-color: white;
@@ -55,6 +53,7 @@ button:focus {
 
 #output {
     height: 300px;
+
 }
 
 .center-block {
@@ -87,14 +86,41 @@ button:focus {
   }
 }
 
+#export {
+  width: 428px;
+  height: 428px;
+  position: absolute;
+  left: -2000px;
+}
+
+.image-cover {
+  height: 320px;
+  width: 360px;
+  overflow: hidden;
+}
+
+
+.image-cover img {
+    width: 360px;
+    height: auto;
+    margin: -0px 0 0 -0px;
+}
+
+
 .frame {
-  z-index: 2;
-  width: 350px;
+  z-index: 0;
+  height: 428px;
+  width: 428px;
   background-color: #F6F6F6;
   opacity: 1;
   filter: sepia(0.10);
-  padding: 25px 25px 0px 25px;
-  width: 100%;
+  padding-left: 34px;
+  padding-right: 34px;
+  padding-top: 28px;
+  padding-bottom: 80px;
+  margin: 0px;
+  border: 1px;
+  color: black;
 }
 
 .center {
@@ -135,6 +161,7 @@ a {
 p {
   font-family: Marker;
   opacity: 0.9;
+  color:
 }
 
 
@@ -146,7 +173,7 @@ p {
 
 @media (min-width: 800px) {
   .mobile-font {
-      font-size: 4.5rem;
+      font-size: 4.2rem;
   }
 }
 
@@ -172,7 +199,7 @@ p {
   display: inline-block;
 }
 
-.btn {
+.btn-file {
   text-align: center;
   border: 2px dashed gray;
   color: white;
@@ -181,12 +208,14 @@ p {
   border-radius: 1em;
   border-width: 1px;
   border-radius: 1em;
-  font-size: 2em;
+  font-size: 1em;
   padding: 12px 20px;
   margin: 8px 0;
 }
 
 .download {
+  z-index: 100;
+  position: absolute;
   text-align: center;
   border: 0px solid gray;
   color: black;
@@ -196,9 +225,15 @@ p {
   border-radius: 1em;
   border-width: 1;
   border-radius: 1em;
-  font-size: 2em;
+  font-size: 1em;
   padding: 12px 20px;
   margin: 8px 0;
+  bottom: 0px;
+  left: 0px;
+}
+
+a.download:hover {
+  color: black;
 }
 
 .upload-btn-wrapper input[type=file] {
@@ -213,27 +248,31 @@ p {
   margin-top: 25px;
 }
 
-#nav-home-tab, #nav-profile-tab {
+#edit-album-cover, #export-image {
   background-color: transparent;
   border-bottom: 1px solid white;
 }
 
-#nav-home-tab.active , #nav-profile-tab.active {
+#edit-album-cover.active , #export-image.active {
   background-color: transparent;
   border-bottom: 0px;
 }
 
-a#nav-profile-tab:hover, a#nav-home-tab:hover {
+a#export-image:hover, a#edit-album-cover:hover {
   border-top-color: transparent;
   border-right-color: transparent;
   border-left-color: transparent;
 }
 
-a#nav-profile-tab:hover.active, a#nav-home-tab:hover.active {
+a#export-image:hover.active, a#edit-album-cover:hover.active {
   border-color: white;
 }
 
-#nav-home-tab, #nav-profile-tab {
+a#download {
+  margin-top: 10px;
+}
+
+#edit-album-cover, #export-image {
   color: lightgrey;
   font-size: 1em;
   font-weight: normal;

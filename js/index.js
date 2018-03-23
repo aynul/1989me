@@ -29,15 +29,29 @@ function downloadFile(data) {
 }
 
 function onChange(){
-  html2canvas(document.querySelector("#export"), {async: false}).then(function(canvas) {
+  html2canvas(document.querySelector("#export")) //, {async: false})
+  .then(function(canvas) {
     var d = canvas.toDataURL("image/png");
-    $('#output').html("<img width='300px' id='download' alt='export' src='"+d+"' alt='from canvas'/>");
+    $('#output').html("<img id='download' height='476px' width='476px' alt='export' src='"+d+"' alt='from canvas'/>");
+  })
+  .catch(function(err) {
+    console.error(err);
   });
 }
+
+// async function onChange(){
+//   try {
+//     const canvas = await html2canvas(document.querySelector("#export"))
+//     var d = canvas.toDataURL("image/png");
+//     $('#output').html("<img id='download' height='476px' width='476px' alt='export' src='"+d+"' alt='from canvas'/>");
+//   } catch (err) {
+//     console.log('error', err);
+//   }
+// }
 
 function PrintDiv(){
   // var download_link = document.querySelector('#btn-export');
   var d = document.querySelector("#download")
   // var img = canvas.toDataURL("image/png");
-  downloadFile(d.url)
+  downloadFile(d.src)
 }
