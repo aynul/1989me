@@ -12,18 +12,27 @@ body {
 
 
  input[type=text] {
-     width: 50%;
+     width: 200px;
      height: auto;
      text-align: center;
      display: inline;
      background-color: grey;
      border-width: 0;
      font-size: 2em;
+     border-radius:1em;
      padding: 12px 20px;
      margin: 4px 0;
      box-sizing: border-box;
  }
 
+input:focus,input:active {
+   color: black;
+   background-color: white;
+   outline: 2px !important;
+   box-shadow: none;
+}
+
+input:focus,
 select:focus,
 textarea:focus,
 {
